@@ -2,7 +2,7 @@ import { CLEAR_CURRENT_USER, SET_CURRENT_USER } from "../types/authTypes";
 
 
 const initialState = {
-  currentUser: localStorage.getItem("currentUser"),
+  currentUser: localStorage.getItem("currentUser") ? localStorage.getItem("currentUser") : false,
 };
 
 const authReducer = (state = initialState, { type }) => {

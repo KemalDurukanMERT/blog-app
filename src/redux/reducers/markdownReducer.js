@@ -14,7 +14,7 @@ const initialState = {
   title: "",
   author: "",
   image: "",
-  blogs: [],
+  blogs: JSON.parse(localStorage.getItem("blogs")) ? JSON.parse(localStorage.getItem("blogs")) : [],
 };
 
 const markdownReducer = (state = initialState, { type, payload }) => {
@@ -69,6 +69,7 @@ const markdownReducer = (state = initialState, { type, payload }) => {
         ...state,
         blogs: state.blogs,
       };
+      localStorage.setItem("blogs", JSON.stringify(state.blogs))
       return newState;
 
     case RENEW_BLOGS:
@@ -76,6 +77,7 @@ const markdownReducer = (state = initialState, { type, payload }) => {
         ...state,
         blogs: payload.nblogs,
       };
+      localStorage.setItem("blogs",JSON.stringify(renewedBlogs.blogs))
       return renewedBlogs;
 
     default:

@@ -27,7 +27,7 @@ class Blogs extends Component {
           <div
             className={
               !this.props.markdownVisible
-                ? "container w-100 border border-success mt-3"
+                ? "container w-100 mt-3"
                 : "d-none"
             }
           >
