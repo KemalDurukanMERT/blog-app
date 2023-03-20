@@ -8,15 +8,12 @@ class Login extends Component {
     const handleSubmit = (e) => {
       e.preventDefault();
       this.props.userLogin();
-      console.log(this.props.currentUser)
-      console.log(sessionStorage.getItem("currentUser"))
-      alert("Thanks, You can go to the Blogs now!")
-    }
+      console.log(this.props.currentUser);
+      console.log(sessionStorage.getItem("currentUser"));
+      alert("Thanks, You can go to the Blogs now!");
+    };
     return (
-      <div
-        style={{ marginLeft: "240px" }}
-        className="d-flex justify-content-center mt-3"
-      >
+      <div className="login d-flex justify-content-center mt-3">
         <form className="mw-50 mt-3 border border-danger p-5 rounded">
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
@@ -52,7 +49,11 @@ class Login extends Component {
               Check me out
             </label>
           </div>
-          <button type="submit" className="btn btn-primary" onClick={(e)=>handleSubmit(e)}>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={(e) => handleSubmit(e)}
+          >
             Submit
           </button>
         </form>

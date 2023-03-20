@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+.dashboard, .login, .blogs, .blog-detail-container{
+  margin-left: 240px
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 991.98px) {
+  .dashboard, .login, .blogs{
+    margin-left: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.addBlog{
+  height: calc(100vh - 140px);
+} 
+
+.markdown-area{
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.write-markdown{
+  width: 50%;
+  height: 100%;
+  padding: 13px;
+  border-right: 1.5px solid rgba(15, 15, 15, 0.4);
+  font-family: "Lato", sans-serif;
+  border: 3px solid black;
+  border-radius: 20px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.markdown-display{
+  width: 50%;
+  height: 100%;
+  padding: 13px;
+  border-right: 1.5px solid rgba(15, 15, 15, 0.4);
+  font-family: "Lato", sans-serif;
+  border: 3px solid black;
+  border-radius: 20px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+.markdown-display::-webkit-scrollbar{
+  display:none;
+}
+.write-markdown::-webkit-scrollbar{
+  display:none;
+}
+
+.button-save, .btn-right{
+  float: right;
+}
+
+textarea{
+  min-height:300px;
 }

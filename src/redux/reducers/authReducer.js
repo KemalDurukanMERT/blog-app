@@ -2,7 +2,7 @@ import { CLEAR_CURRENT_USER, SET_CURRENT_USER } from "../types/authTypes";
 
 
 const initialState = {
-  currentUser: false,
+  currentUser: localStorage.getItem("currentUser"),
 };
 
 const authReducer = (state = initialState, { type }) => {
@@ -12,14 +12,14 @@ const authReducer = (state = initialState, { type }) => {
         ...state,
         currentUser: true,
       }
-      sessionStorage.setItem("currentUser", true)
+      localStorage.setItem("currentUser", true)
       return newUserState
     case CLEAR_CURRENT_USER:
       let deleteUserState = {
         ...state,
         currentUser: false,
       }
-      sessionStorage.setItem("currentUser", false)
+      localStorage.setItem("currentUser", false)
       return deleteUserState;
 
     default:

@@ -6,8 +6,8 @@ import { userLogin } from "../redux/actions/authAction";
 class PrivateRouter extends Component {
   render() {
     return (
-      <div style={{ marginLeft: "240px" }}>
-        {this.props.currentUser ? <Outlet /> : <Navigate to="/login" />}
+      <div>
+        {this.props.currentUser == true ? <Outlet /> : <Navigate to="/login" />}
       </div>
     );
   }

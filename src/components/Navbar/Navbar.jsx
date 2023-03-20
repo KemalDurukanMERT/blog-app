@@ -10,7 +10,7 @@ class Navbar extends Component {
     const handleLogout = () => {
       this.props.userLogout();
       console.log(this.props.currentUser);
-      console.log(sessionStorage.getItem("currentUser"));
+      console.log(localStorage.getItem("currentUser"));
     };
 
     const activateDash = () => {
@@ -41,7 +41,7 @@ class Navbar extends Component {
             className="collapse d-lg-block sidebar collapse bg-white"
           >
             <div className="position-sticky">
-              <div className="list-group list-group-flush mx-3 mt-4">
+              <div className="list-group list-group-flush mx-3">
                 <Link
                   to="/"
                   onClick={() => activateDash()}
@@ -141,7 +141,7 @@ class Navbar extends Component {
                   </ul>
                 </li>
                 {/* Avatar */}
-                <li  className={this.props.currentUser ? "nav-item dropdown" : "d-none"}>
+                <li  className={this.props.currentUser == true ? "nav-item dropdown" : "d-none"}>
                   <a
                     className="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
                     href="#"
@@ -191,7 +191,7 @@ class Navbar extends Component {
         {/*Main Navigation*/}
         {/*Main layout*/}
         <main style={{ marginTop: "58px" }}>
-          <div className="container pt-4" />
+          <div className="container" />
         </main>
         {/*Main layout*/}
       </div>
